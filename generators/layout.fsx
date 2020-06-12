@@ -83,7 +83,7 @@ let layout (ctx : SiteContents) active bodyCnt =
                           ]
                         ]
                       ]
-                      li [] [ a [Href "#"] [!! "TRY ONLINE"] ]
+                      li [] [ a [Href "https://try.fsharp.org"] [!! "TRY ONLINE"] ]
                       li [] [ a [Href "#"] [!! "INSTALL"] ]
                       li [] [ a [Href "#"] [!! "COMMUNITY"] ]
                       li [] [ a [Href "#"] [!! "FOUNDATION"] ]
