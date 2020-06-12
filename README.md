@@ -14,7 +14,7 @@ To contribute, first check the [projects](https://github.com/fsharp/fssf-website
 3. Run `dotnet tool restore` - this will download the static site generator `fornax`.
 4. Edit the website content locally. If using an editor such as VS Code with Ionide or Rider, you'll have syntax highlighting and typechecking as you author the content.
 5. To build the site locally, use `dotnet tool run fornax build`.
-6. To run the site on a local server, user `dotnet tool run fornax watch` and then browse to http://localhost:8080 to see the content.
+6. To run the site on a local server, use `dotnet tool run fornax watch` and then browse to http://localhost:8080 to see the content.
 7. When your works is ready to publish, commit the changes and create a pull request from your fork.
 
 Once your work is merged, please close the issue. If the work is too large and you'd like to split it up, add an additional note card with the balance of work.

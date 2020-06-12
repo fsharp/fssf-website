@@ -19,8 +19,6 @@ jobs:
         dotnet-version: 3.1.102
     - name: Install fornax
       run: dotnet tool restore
-    - name: Generate _lib directory
-      run: mkdir temporary && cd temporary && dotnet tool run fornax new && cp -r _lib ../ && cd - && rm -r temporary
     - name: Build with fornax
       run: dotnet tool run fornax build
     - name: Upload generated website
