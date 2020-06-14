@@ -40,6 +40,7 @@ let config = {
         {Script = "docs.fsx"; Trigger = Once; OutputFile = NewFileName "docs.html" }
         {Script = "install.fsx"; Trigger = Once; OutputFile = NewFileName "install.html" }
         {Script = "community.fsx"; Trigger = Once; OutputFile = NewFileName "community.html" }
+        {Script = "foundation.fsx"; Trigger = Once; OutputFile = NewFileName "foundation.html" }
         {Script = "contact.fsx"; Trigger = Once; OutputFile = NewFileName "contact.html" }
     ]
 }
