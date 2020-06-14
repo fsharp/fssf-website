@@ -70,9 +70,9 @@ let layout (ctx : SiteContents) active bodyCnt =
                 div [Class "header-main"] [
                   nav [] [
                     ul [] [
-                      li [] [ a [Href "#"] [!! "ABOUT F#"] ]
+                      li [] [ a [Href "about.html"] [!! "ABOUT F#"] ]
                       li [] [
-                        a [Href "#"] [!! "DOCS"]
+                        a [Href "docs.html"] [!! "DOCS"]
                         div [ Class "header-btm" ] [
                           ul [] [
                             li [ Class "connect" ] [ a [Href "#"] [!! "API"] ]
@@ -84,9 +84,9 @@ let layout (ctx : SiteContents) active bodyCnt =
                         ]
                       ]
                       li [] [ a [Href "https://try.fsharp.org"] [!! "TRY ONLINE"] ]
-                      li [] [ a [Href "#"] [!! "INSTALL"] ]
-                      li [] [ a [Href "#"] [!! "COMMUNITY"] ]
-                      li [] [ a [Href "#"] [!! "FOUNDATION"] ]
+                      li [] [ a [Href "install.html"] [!! "INSTALL"] ]
+                      li [] [ a [Href "community.html"] [!! "COMMUNITY"] ]
+                      li [] [ a [Href "foundation.html"] [!! "FOUNDATION"] ]
                     ]
                   ]
                 ]
