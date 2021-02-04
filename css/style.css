@@ -31,19 +31,7 @@ header,nav,section,article,aside,footer,hgroup,figure,main {display: block; }
 
 @font-face {
   font-family: 'Rajdhani-Bold';
-  src: url('../fonts/Rajdhani-Bold/Rajdhani-Bold.eot?#iefix') format('embedded-opentype'), 
-      url('../fonts/Rajdhani-Bold/Rajdhani-Bold.woff') format('woff'), 
-      url('../fonts/Rajdhani-Bold/Rajdhani-Bold.ttf')  format('truetype'),
-      url('../fonts/Rajdhani-Bold/Rajdhani-Bold.svg#Rajdhani-Bold') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
-
-
-@font-face {
-  font-family: 'AndaleMono';
-  src: url('../fonts/AndaleMono/AndaleMono.eot?#iefix') format('embedded-opentype'),      url('../fonts/AndaleMono/AndaleMono.woff') format('woff'),
-      url('../fonts/AndaleMono/AndaleMono.ttf')  format('truetype'), url('../fonts/AndaleMono/AndaleMono.svg#AndaleMono') format('svg');
+  src: url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@700&display=swap');
   font-weight: normal;
   font-style: normal;
 }
@@ -82,10 +70,12 @@ nav ul li:hover ul {padding: 0 0 0 70px;}
 /*nav ul li:hover ul li {padding: 0 30px; width: auto;}*/
 nav:before{background: url(../images/shap-img1.png) no-repeat;width:162px;height:162px;position: absolute;top: -19px;left: -99px;content: '';background-size: contain;z-index: 9;}
 nav{position: relative;}
-.social-icon{text-align: right;padding: 17px 0 0 0;}
+.social-icon {text-align: right;padding: 17px 0 0 0;}
 .social-icon ul{}
-.social-icon > ul > li.facebook{width: 39px;height: 39px;background: #3d5a98;text-align: center;margin: 0px 12px 0 0;}
-.social-icon > ul > li.twitter{width: 39px;height: 39px;background: #1da1f2;margin: 0 11px 0 0;text-align: center;}
+.social-icon .twitter i {color:#1da1f2;}
+.social-icon .facebook i {color:#3d5a98}
+.social-icon > ul > li.facebook{width: 39px;height: 39px;background: white;text-align: center;margin: 0px 12px 0 0;}
+.social-icon > ul > li.twitter{width: 39px;height: 39px;background: white;margin: 0 11px 0 0;text-align: center;}
 .social-icon ul li.teddy{margin: 0 22px 0 0;width: 39px;height: 39px;}
 .social-icon > ul > li{display: inline-block;vertical-align: top;margin: 0 0 0 0;}
 .social-icon ul li a{}

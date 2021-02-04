@@ -1,4 +1,4 @@
-#r "../_lib/Fornax.Core.dll"
+﻿#r "../_lib/Fornax.Core.dll"
 #if !FORNAX
 #load "../loaders/postloader.fsx"
 #load "../loaders/pageloader.fsx"
@@ -45,10 +45,12 @@ let layout (ctx : SiteContents) active bodyCnt =
             title [] [!! ttl]
             link [Rel "icon"; Type "image/png"; Sizes "32x32"; Href "images/favicon.png"]
             link [Rel "stylesheet"; Type "text/css"; Href "https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&display=swap"]
-            link [Rel "stylesheet"; Type "text/css"; Href "css/font-awesome.min.css"]
+            link [Rel "stylesheet"; Type "text/css"; Href "css/fontawesome.min.css"]            
+            link [Rel "stylesheet"; Type "text/css"; Href "css/solid.min.css"]
+            link [Rel "stylesheet"; Type "text/css"; Href "css/brands.min.css"]
             link [Rel "stylesheet"; Type "text/css"; Href "css/style.css"]
-            link [Rel "stylesheet"; Type "text/css"; Href "https://kenwheeler.github.io/slick/slick/slick.css"]
-            link [Rel "stylesheet"; Type "text/css"; Href "https://kenwheeler.github.io/slick/slick/slick-theme.css"]
+            link [Rel "stylesheet"; Type "text/css"; Href "//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"]
+            link [Rel "stylesheet"; Type "text/css"; Href "//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"]
         ]
         body [] [
           div [Class "wrapper"] [
@@ -93,9 +95,9 @@ let layout (ctx : SiteContents) active bodyCnt =
                 div [Class "container"] [
                   div [Class "social-icon"] [
                     ul [] [
-                      li [Class "facebook"] [a [Href "#"] [i [Class "fa fa-facebook"] []]]
-                      li [Class "twitter"] [a [Href "#"] [i [Class "fa fa-twitter"] []]]
-                      li [Class "teddy"] [a [Href "#"] [i [Class "fa fa-github"] []]]
+                      li [Class "facebook"] [a [Href "#"] [i [Class "fab fa-facebook fa-3x"] []]]
+                      li [Class "twitter"] [a [Href "#"] [i [Class "fab fa-twitter fa-3x"] []]]
+                      li [Class "teddy"] [a [Href "#"] [i [Class "fab fa-github fa-3x"] []]]
                       li [] [ input [Type "text"; Name "lastname"; Placeholder "Search"] ]
                     ]
                   ]
@@ -247,7 +249,7 @@ let layout (ctx : SiteContents) active bodyCnt =
                 ]
               ]
               div [Class "back-to-top"] [
-                a [Href "#"; Class "scrollToTop"] [i [Class "fa fa-angle-up"] []]
+                a [Href "#"; Class "scrollToTop"] [i [Class "fas fa-angle-up"] []]
               ]
             ]
             footer [] [
@@ -285,7 +287,7 @@ let layout (ctx : SiteContents) active bodyCnt =
             ]
           ]
           script [Src "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"] []
-          script [Src "https://kenwheeler.github.io/slick/slick/slick.js"] []
+          script [Src "//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"] []
           script [] [
             !!"""
             $(document).ready(function(){
