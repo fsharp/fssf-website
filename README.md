@@ -10,11 +10,11 @@ Modifications are done by pull request, which are built automatically and the pr
 To contribute, first check the [projects](https://github.com/fsharp/fssf-website/projects/1) for static content to migrate. Move the note to "In progress", convert it to an issue, and assign it to yourself so others are aware you are working on it.
 
 1. Fork and clone this repository
-2. Install the .NET Core 3 SDK.
+2. Install the [.NET Core 3.1 SDK](https://dotnet.microsoft.com/download/dotnet-core/3.1).
 3. Run `dotnet tool restore` - this will download the static site generator `fornax`.
 4. Edit the website content locally. If using an editor such as VS Code with Ionide or Rider, you'll have syntax highlighting and typechecking as you author the content.
-5. To build the site locally, use `dotnet tool run fornax build`.
-6. To run the site on a local server, use `dotnet tool run fornax watch` and then browse to http://localhost:8080 to see the content.
+5. To build the site locally, use `dotnet fornax build`.
+6. To run the site on a local server, use `dotnet fornax watch` and then browse to http://localhost:8080 to see the content.
 7. When your works is ready to publish, commit the changes and create a pull request from your fork.
 
 Once your work is merged, please close the issue. If the work is too large and you'd like to split it up, add an additional note card with the balance of work.
