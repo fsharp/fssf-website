@@ -39,6 +39,7 @@ let layout (ctx : SiteContents) active bodyCnt =
 
     html [] [
         head [] [
+            meta [CharSet "utf-8"]
             meta [HttpEquiv "Content-Type"; Content "text/html; charset=utf-8"]
             meta [Name "viewport"; Content "width=1510"]
             meta [Name "format-detection"; Content "telephone=no"]
