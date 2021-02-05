@@ -278,7 +278,7 @@ let layout (ctx : SiteContents) active bodyCnt =
                   ]
                   div [Class "ftr-rgt"] [
                     div [Class "ftr-cont"] [
-                      p [] [ !!"Copyright © 2012-2018 F# Software Foundation and individual contributors. Maintained by F# Software Foundation and the F# community on GitHub." ]
+                      p [] [ !!"Copyright © 2012-2021 F# Software Foundation and individual contributors. Maintained by F# Software Foundation and the F# community on GitHub." ]
                     ]
                   ]
                   div [Class "clear"] []
