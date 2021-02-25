@@ -13,24 +13,24 @@ let generate' (ctx : SiteContents) (_: string) =
     |> Option.defaultValue ""
 
 
-  Layout.layout ctx "Home" [
+  Layout.layout ctx "Docs" [
     section [Class "hero is-info is-medium is-bold"] [
       div [Class "hero-body"] [
         div [Class "container has-text-centered"] [
-          h1 [Class "title"] [!!desc]
+          h2 [Class "title"] [!!desc]
         ]
       ]
     ]
     div [Class "container"] [
       section [Class "articles"] [
         div [Class "column is-8 is-offset-2"] [
-            div [Class "card article"] [
-                div [Class "card-content"] [
-                    div [Class "content article-body"] [
-                        !! about
-                    ]
-                ]
+          div [Class "card article"] [
+            div [Class "card-content"] [
+              div [Class "content article-body"] [
+                  !! about
+              ]
             ]
+          ]
         ]
       ]
     ]]
