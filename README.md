@@ -27,32 +27,32 @@ Fornax includes a full Domain Specific Language (DSL) for generating HTML markup
 
 For a practical example, suppose you have a layout that defines the site's overall navigation elements, headers, and footers that you want to remain consistent throughout the site. Within those navigation elements, you want each page to have different content. To achieve this, you'll need a generator for the layout that each page can reference so they \render their own content then inject it into the layout's generator that will generate the frame around that content. The result is that each page has its own internal content that is wrapped by a standard layout.
 
-In fact, in `[index.fsx](generators/index.fsx)`, you will see it does exactly this:
+In fact, in [`index.fsx`](generators/index.fsx), you will see it does exactly this:
 
-1. It loads `[layout.fsx](generators/layout.fsx)`, which loads each of the loader modules. It's only loaded once and then cached for each page that calls it.
-1. The loader modules that `layout.fsx` loads each add their content to `SiteContent`. For instance `[globalloader.fsx](loaders/globalloader.fsx)` adds a `SiteInfo` record with the title and description to the `SiteContent` that is available further in the pipeline.
+1. It loads [`layout.fsx`](generators/layout.fsx), which loads each of the loader modules. It's only loaded once and then cached for each page that calls it.
+1. The loader modules that `layout.fsx` loads each add their content to `SiteContent`. For instance [`globalloader.fsx`](loaders/globalloader.fsx) adds a `SiteInfo` record with the title and description to the `SiteContent` that is available further in the pipeline.
 1. The `generate'` function builds all the markup for this page and the result is an `HtmlElement` which is passed to `Layout.layout`. It has access to data loaded into `SiteContent by the loaders.
-1. In `[layout.fsx](generators/layout.fsx)`, the `layout` function wraps the content for that page with the headers, navigation elements, and footers, then returns an `HtmlElement`.
+1. In [`layout.fsx`](generators/layout.fsx), the `layout` function wraps the content for that page with the headers, navigation elements, and footers, then returns an `HtmlElement`.
 1. The `generate` function at the bottom passes the `SiteContents` to `generate'` to build this `HtmlElement` (this page's content wrapped in the navigation layout) which is then passed to `Layout.render` which calls `HtmlElement.ToString` to generate the HTML content for the page.
-1. In `[config.fsx](config.fsx)`, the `config` is defined with all the `Generators[]` that are used for the site. It includes `index.fsx` to generate `index.html`.
+1. In [`config.fsx`](config.fsx), the `config` is defined with all the `Generators[]` that are used for the site. It includes `index.fsx` to generate `index.html`.
 
 From a the top down, the pipeline for Fornax looks like this:
 
-1. Read `[config.fsx](config.fsx)` to find generator scripts.
+1. Read [`config.fsx`](config.fsx) to find generator scripts.
 1. Load each generator script file from the config.
-1. Each generator script references `[layout.fsx](generators/layout.fsx)`.
+1. Each generator script references [`layout.fsx`](generators/layout.fsx).
 1. The `layout.fsx` module loads the various loaders to populate `SiteContent`.
 1. The `generate` function is called on each generator script.
 1. In each script's `generate` function
     a. The `generate'` function generates content.
-    a. The content is passed to `layout` function in `[layout.fsx](generators/layout.fsx)`
+    a. The content is passed to `layout` function in [`layout.fsx`](generators/layout.fsx)
     a. The content wrapped in a layout is passed to `Layout.render` which finally converts it all to a string of HTML.
-1. The string of HTML is written to the file specified in `[config.fsx](config.fsx)` for that generator.
+1. The string of HTML is written to the file specified in [`config.fsx`](config.fsx) for that generator.
 
 ### Markdown to Lower Complexity for Content Contributions
 In some cases, it's necessary to use Fornax's F# DSL to generate content, such as data driven content or the overall layout to wrap content. This gives a great deal of flexibility, but also adds complexity since contributors must understand F#, the Fornax HTML DSL, and the website's CSS styles. Whenever the content is very static and follows a standard format, simple markdown can be used for the content.
 
-The `[postloader.fsx](loaders/postloader.fsx)` provides an example as a way to load content from markdown files. Some minimal metadata can be provided at the top of each markdown file to use in content generation before rendering HTML from the markdown. If people will frequently be contributing static content, please consider supporting loading this content from markdown files.
+The [`postloader.fsx`](loaders/postloader.fsx) provides an example as a way to load content from markdown files. Some minimal metadata can be provided at the top of each markdown file to use in content generation before rendering HTML from the markdown. If people will frequently be contributing static content, please consider supporting loading this content from markdown files.
 
 ### Contributions are Welcome
 
